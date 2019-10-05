@@ -7,14 +7,20 @@ export default class Input extends Component {
     this.state = {
       scooby: props.scooby,
     }
+    this.handleChange = this.handleChange.bind(this)
+  }
+
+  handleChange(e) {
+    this.setState({ scooby: e.target.value })
   }
 
   render() {
     return (
       <div>
-        <input 
-          type="text" 
-          value={this.state.scooby} 
+        <input
+          type="text"
+          defaultValue={this.state.scooby}
+          onChange={this.handleChange}
         /> 
         <h5>{ this.state.scooby }</h5>
       </div>
